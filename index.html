@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artworks</title>
+
+    <!-- DataTables -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.3.6/css/dataTables.dataTables.css" />
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+</head>
+
+<body class="bg-dark text-white">
+    <div class="container">
+        <!-- Page Title -->
+        <h1 class="text-center text-white my-4">Artworks</h1>
+
+        <!-- Loading -->
+        <div id="artworksLoading" class="text-center">Artworks Loading...</div>
+
+        <!-- Table -->
+        <table id="artworkTable" class="table table-dark table-hover table-borderless rounded">
+            <thead>
+                <tr>
+                    <th>Artwork</th>
+                    <th>Artist</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                
+            </tbody>
+        </table>
+
+        <div class="modal fade" id="artModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content bg-dark text-white">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="artTitle"></h5>
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span class="text-white">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="mb-3 d-flex flex-row">
+                            <div class="mr-4 d-flex flex-column">
+                                <div class="mb-2">
+                                    <div class="font-weight-bold text-muted">Artist</div>
+                                    <div id="artArtist"></div>
+                                </div>
+                                <div class="mb-2">
+                                    <div class="font-weight-bold text-muted">Date</div>
+                                    <div id="artDate"></div>
+                                </div>
+                                <div class="mb-2">
+                                    <div class="font-weight-bold text-muted">Origin</div>
+                                    <div id="artOrigin"></div>
+                                </div>
+
+                                <div class="mb-2">
+                                    <div class="font-weight-bold text-muted">Medium</div>
+                                    <div id="artMedium"></div>
+                                </div>
+                                <div>
+                                    <div class="font-weight-bold text-muted">Dimensions</div>
+                                    <div id="artDimensions"></div>
+                                </div>
+                            </div>
+
+                            <img class="ml-auto" id="artImage">
+                        </div>
+
+                        <div>
+                            <div class="font-weight-bold text-muted">Description</div>
+                            <div id="artDesc"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>
+
+    <!-- Styles -->
+    <style>
+        .dt-length select,
+        .dt-search input,
+        .dt-paging
+        {
+            background-color: white !important;
+            color: #333 !important;
+            border: 1px solid white !important;
+        }
+
+        #artworkTable_wrapper {
+            display: none;
+        }
+
+        #artworkTable thead {
+            background-color: #2a2a2a;
+            color: white;
+        }
+
+        #artworkTable tbody tr {
+            cursor: pointer;
+        }
+
+        .text-muted {
+            color: #a5a0a0 !important;
+        }
+
+        #artImage {
+            max-width: 100%;
+            max-height: 250px;
+        }
+    </style>
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- Datatables -->
+    <script src="https://cdn.datatables.net/2.3.6/js/dataTables.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
+
+    <!-- File for getting api data -->
+    <script src="index.js"></script>
+</body>
+</html>

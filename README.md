@@ -1,4 +1,4 @@
-# Artwork App
+# Artwork Web App
 
 A front-end quiz application demonstrating JavaScript logic, DOM manipulation, and responsive UI design.
 
